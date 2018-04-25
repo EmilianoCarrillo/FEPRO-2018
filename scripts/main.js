@@ -15,45 +15,62 @@ document.getElementById("minutos").innerHTML = minutes + " minutos";
 
 
 //
-// /*VIDEO ON SCROLL*/
-// // select video element
-// var vid = document.getElementById('video');
-// var time = $('#time');
-// var scroll = $('#scroll');
-// var windowheight = $(window).height()-20;
-//
-//
-// var scrollpos = window.pageYOffset/400;
-// var targetscrollpos = scrollpos;
-// var accel = 0;
-//
-//
-// // ---- Values you can tweak: ----
-// var accelamount = 1; //How fast the video will try to catch up with the target position. 1 = instantaneous, 0 = do nothing.
-//
-// // pause video on load
-// vid.pause();
-//
-// window.onscroll = function(){
-//     //Set the video position that we want to end up at:
-//     targetscrollpos = window.pageYOffset/400;
-//
-//     //move the red dot to a position across the side of the screen
-//     //that indicates how far we've scrolled.
-//     scroll.css('top', 10+(window.pageYOffset/13500*windowheight));
-// };
-//
-//
-// setInterval(function(){
-//
-//       //Accelerate towards the target:
-//       scrollpos += (targetscrollpos - scrollpos)*accelamount;
-//
-//       //move the blue dot to a position across the side of the screen
-//       //that indicates where the current video scroll pos is.
-//
-//       //update video playback
-//       vid.currentTime = scrollpos;
-//       vid.pause();
-//
-// }, 40);
+
+
+(function() {
+
+  var Menu = (function() {
+    var burger = document.querySelector('.burger');
+    var menu = document.querySelector('.menu');
+    var menuList = document.querySelector('.menu__list');
+    var brand = document.querySelector('.menu__brand');
+    var menuItems = document.querySelectorAll('.menu__item');
+
+    var active = false;
+
+    var toggleMenu = function() {
+      if (!active) {
+        menu.classList.add('menu--active');
+        menuList.classList.add('menu__list--active');
+        brand.classList.add('menu__brand--active');
+        burger.classList.add('burger--close');
+        for (var i = 0, ii = menuItems.length; i < ii; i++) {
+          menuItems[i].classList.add('menu__item--active');
+        }
+
+        active = true;
+      } else {
+        menu.classList.remove('menu--active');
+        menuList.classList.remove('menu__list--active');
+        brand.classList.remove('menu__brand--active');
+        burger.classList.remove('burger--close');
+        for (var i = 0, ii = menuItems.length; i < ii; i++) {
+          menuItems[i].classList.remove('menu__item--active');
+        }
+
+        active = false;
+      }
+    };
+
+    var bindActions = function() {
+      burger.addEventListener('click', toggleMenu, false);
+    };
+
+    var init = function() {
+      bindActions();
+    };
+
+    return {
+      init: init
+    };
+
+  }());
+
+  Menu.init();
+
+}());
+
+
+$(".menu__link").on("click", function(){
+  $(".burger").click();
+});
