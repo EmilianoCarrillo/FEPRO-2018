@@ -40,11 +40,26 @@
     height: 0;
   }
 
+
+  .section-heading {
+    font-size: 1.5rem;
+  }
+
+  #Gcalendar, #convocatoriaDownload{
+    font-size: 1rem;
+  }
+
 }
 
 @media only screen and (min-width: 600px) {
   .logoBannerMobile{
     visibility: hidden;
+  }
+  .section-heading {
+    font-size: 3rem;
+  }
+  #Gcalendar, #convocatoriaDownload {
+    font-size: 1.4rem;
   }
 }
 
@@ -211,8 +226,8 @@ p{
 }
 
 .section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 }
 
 .overlay {
@@ -275,9 +290,7 @@ blink, .blink {
 #Gcalendar,  #convocatoriaDownload{
   font-family: 'Ubuntu Mono', monospace;
   text-align: center;
-  font-size: 1.4rem;
   padding-top: 2rem;
-
 }
 
 #Gcalendar a{
