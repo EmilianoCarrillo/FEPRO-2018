@@ -1,6 +1,7 @@
 *{
   padding: 0;
   margin: 0;
+
 }
 
 .wrapper{
@@ -290,13 +291,14 @@ blink, .blink {
 #Gcalendar,  #convocatoriaDownload{
   font-family: 'Ubuntu Mono', monospace;
   text-align: center;
-  padding-top: 2rem;
-}
-
-#Gcalendar a{
-    color: #398581;
 }
 
 #convocatoriaDownload a{
   color: #E2B13C;
+}
+
+.addeventatc{
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2rem;
 }

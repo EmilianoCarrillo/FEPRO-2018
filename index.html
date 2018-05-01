@@ -15,10 +15,11 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/sched.css">
+  <!-- AddEvent script -->
+  <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
 </head>
 
 <body>
-
   <!-- MENU -->
   <header class="header">
     <!-- Icono hamuburguesa -->
@@ -36,7 +37,7 @@
       <!-- Opciones del menú -->
       <ul class="menu__list">
         <!-- <li class="menu__item"><a id="menuItemUno" href="#about" class="menu__link">iniciar sesión</a></li> -->
-        <li class="menu__item"><a  href="#about" class="menu__link">¿fepro?</a></li>
+        <li class="menu__item"><a href="#about" class="menu__link">¿fepro?</a></li>
         <li class="menu__item"><a href="#where" class="menu__link">cuándo y dónde</a></li>
         <li class="menu__item"><a href="#convocatoria" class="menu__link">convocatoria</a></li>
         <!-- <li class="menu__item"><a href="#categorias" class="menu__link">categorías/impactos</a></li> -->
@@ -119,9 +120,17 @@
             <!-- mapa de google maps personalizado -->
             <iframe class="overlay" src="https://snazzymaps.com/embed/65775" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen=""></iframe>
             <!-- Agregar evento al calendaario de Google -->
-            <h2 id="Gcalendar"><a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NG40NzFxZGh2aTA0aXRjYWhwb3R0aG4wamtfMjAxODA5MTNUMTUwMDAwWiBlbWlsaWFub2NhcnJpbGxvbW9uY2F5b0Bt&amp;tmsrc=emilianocarrillomoncayo%40gmail.com&amp;scp=ALL" >Agregar evento a mi calendario ❯</a></h2>
-            <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NG40NzFxZGh2aTA0aXRjYWhwb3R0aG4wamtfMjAxODA5MTNUMTUwMDAwWiBlbWlsaWFub2NhcnJpbGxvbW9uY2F5b0Bt&amp;tmsrc=emilianocarrillomoncayo%40gmail.com&amp;scp=ALL"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_es-419.gif"></a>
-            <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=Mm1ycTlpMW5zaGJzZHNsc3FodXBpam4xOWxfMjAxODA5MTNUMTUwMDAwWiBlbWlsaWFub2NhcnJpbGxvbW9uY2F5b0Bt&amp;tmsrc=emilianocarrillomoncayo%40gmail.com"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_es-419.gif"></a>
+            <div title="Add to Calendar" class="addeventatc">
+              Añadir evento a mi calendario
+              <span class="start">09/13/2018 10:00 AM</span>
+              <span class="end">09/13/2018 02:00 PM</span>
+              <span class="timezone">America/Mexico_City</span>
+              <span class="title">FEPRO ¡Focalizando metas!</span>
+              <span class="description">La competencia estudiantil más importante de la Facultad de Ciencias de la Computación de la Benemérita Universidad Autónoma de Puebla.</span>
+              <span class="location">Complejo Cultural Universitario BUAP, Via Atlixcayotl 2299, Angelópolis, Corredor Comercial Desarrollo Atlixcayotl, 72810 Puebla, Pue., México</span>
+              <span class="alarm_reminder">1440</span>
+              <span class="recurring">FREQ=DAILY;COUNT=2</span>
+            </div>
           </div>
         </div>
       </div>
@@ -148,8 +157,7 @@
 
     <!-- TODO: PROBAR SCHED -->
     <!-- <a id="sched-embed" href="http://fepro2018.sched.com/list/descriptions/">View the FEPRO schedule &amp; directory.</a><script type="text/javascript" src="http://fepro2018.sched.com/js/embed.js"></script> -->
-
-<!--
+    <!--
     <!- PROGRAMA DEL EVENTO ->
     <section id="ts-schedule" class="container section ts-schedule">
       <h3 class="section-heading">Programa del evento<span class="blink">_</span></h3>
@@ -308,8 +316,6 @@
   </div>
   </section>
 -->
-
-
   </div>
 
   <!-- Pié de página movible -->
@@ -322,6 +328,7 @@
       <li><a href="https://www.instagram.com/fepro_2018/" target="_blank"><i class="fab fa-instagram"></i></a></li>
     </ul>
   </div>
+
 
   <!-- SCRIPTS de Javascript -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
