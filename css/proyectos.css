@@ -1,0 +1,134 @@
+body {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #3b3b3b;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  background: white;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 1500px;
+}
+
+.table {
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
+}
+@media screen and (max-width: 580px) {
+  .table {
+    display: block;
+  }
+}
+
+.row {
+  display: table-row;
+  background: #f6f6f6;
+}
+.row:nth-of-type(odd) {
+  background: #e9e9e9;
+}
+.row.header {
+  font-weight: 900;
+  color: #ffffff;
+  background: #ea6153;
+  position:relative;
+}
+@media screen and (max-width: 580px) {
+  .row {
+    padding: 8px 0;
+    display: block;
+  }
+}
+
+.cell {
+  padding: 6px 12px;
+  display: table-cell;
+}
+@media screen and (max-width: 580px) {
+  .cell {
+    padding: 2px 12px;
+    display: block;
+  }
+  h1{
+    font-size: 20px;
+  }
+}
+
+/*MY CODE*/
+
+@media screen and (max-width: 580px) {
+  table {
+    font-size: 9px;
+  }
+}
+
+thead, td:nth-child(1){
+  font-weight: bold;
+}
+
+tbody tr{
+  cursor: pointer;
+}
+
+.proyectoCol{
+  width:10%;
+  min-width: 150px;
+}
+.impactoCol{
+  width:10%;
+  min-width: 100px;
+}
+.descripcionCol{
+  width:80%;
+  min-width: 300px;
+}
+
+h3{
+  font-size: 20px;
+  color: grey;
+  font-family: monospace;
+}
+
+.title{
+  padding: 20px;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.title:nth-of-type(1), .title:nth-of-type(4){color: #960677;}
+.title:nth-of-type(2), .title:nth-of-type(5){color: #398581;}
+.title:nth-of-type(3), .title:nth-of-type(6){color: #C01B40;}
+
+thead{color: white;}
+#tHead1{background-color: #960677;}
+#tHead2{background-color: #398581;}
+#tHead4{background-color: #C01B40;}
+
+
+.Dia{
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+
+#Dia2 .proyectoCol{
+  width:30%;
+  min-width: 150px;
+}
+#Dia2 .impactoCol{
+  width:30%;
+  min-width: 100px;
+}
+#Dia2 .descripcionCol{
+  width:30%;
+  min-width: 100px;
+}

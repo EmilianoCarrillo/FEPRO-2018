@@ -1,0 +1,96 @@
+#GanadoresContainer{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 12px;
+}
+
+#Ganadores{
+    text-align: center;
+}
+
+tbody tr :nth-child(4){
+    font-size: 11px;
+}
+
+tr, td{
+    cursor: pointer;
+}
+
+#GanadoresImg{
+    height: 100px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.lugarCol{width: 4%}
+.proyectoCol{width: 10%}
+.carreraCol{width: 10%}
+.integrantesCol{width: 15%}
+.descripcionCol{width: 40%}
+
+#GanadoresContainer h2{
+    font-family: monospace;
+    font-weight: bold;
+    text-align: center;
+}
+
+#AvanzadasTable h2{color:#960677;}
+#BasicasTable h2{color: #398581;}
+#HardwareTable h2{color: #E2B13C;}
+
+thead{
+    color: white;
+    font-weight: bold;
+}
+
+#AvanzadasTable thead{background-color: #960677;}
+#BasicasTable thead{background-color: #398581;}
+#HardwareTable thead{background-color: #E2B13C;}
+
+td:nth-child(1){font-weight: bold}
+
+#Selectors a{
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    margin: 20px 0px;
+    padding: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+@media only screen and (max-width: 768px) {
+    #Selectors a {width: 100%}
+}
+
+#Selectors a:nth-of-type(1){
+    color:  #960677;
+    border-bottom: 3px solid #960677;
+}
+#Selectors a:nth-of-type(2){
+    color:  #398581;
+    border-bottom: 3px solid #398581;
+}
+#Selectors a:nth-of-type(3){
+    color:  #E2B13C;
+    border-bottom: 3px solid #E2B13C;
+}
+
+#Selectors a:hover{
+    background-color: rgba(0,0,0,.08);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#BasicasTable, #HardwareTable{
+    opacity: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+#GanadoresContainer  h3{
+    font-size: 20px;
+    color: grey;
+    font-family: monospace;
+  }

@@ -63,6 +63,7 @@
     position: absolute;
     top: 15;
     overflow: hidden;
+    object-fit: cover;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -79,6 +80,7 @@
 .schedule-slot-title {
     margin: 5px 0;
     font-size: 20px;
+    font-weight: bold;
 }
 
 #ts-schedule .section-heading{
@@ -100,3 +102,82 @@
   display: block;
   border-bottom: none;
 }
+
+.schedule-slot-lugar{
+  color: #398550;
+  font-weight: bold;
+}
+.schedule-slot-speaker-place {
+    color: #C71E49;
+    margin: 0;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.schedule-listing.important {
+    background: #398550;
+    color: white;
+}
+
+.schedule-slot-title.conferencia-magistral{
+    background-color: #C71E49;
+    color: white;
+    padding: 5px;
+}
+
+
+/* MOBILE VERSION */
+
+@media only screen and (max-width: 600px) {
+    .schedule-slot-time{
+      width:  100%;
+    }
+    .schedule-slot-info-content{
+      margin-left: 0px;
+    }
+    .schedule-slot-desc{
+      text-align: justify;
+      font-size: 10px;
+    }
+    .schedule-slot-info{
+      width: 100%;
+    }
+    .schedule-slot-speakers {
+        position: relative;
+        margin: 10px;
+    }
+    .schedule-date {
+        font-size: 18px;
+    }
+    .schedule-slot-speaker-name {
+        font-size: 15px;
+    }
+    .schedule-slot-speaker-place{
+      font-size: 10px;
+    }
+    .schedule-slot-title {
+        font-size: 18px;
+    }
+}
+
+/*GANADORES*/
+
+#Ganadores{
+    background: #C71E49;
+    background: -webkit-linear-gradient(135deg, #C71E49, #7C2979, #398581);
+    background: -o-linear-gradient(135deg, #C71E49, #7C2979, #398581);
+    background: linear-gradient(135deg, #C71E49, #7C2979, #398581);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+#Recordatorio{
+    color: grey;
+    margin-bottom: 40px;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+#GanadoresAplicacionesBasicas{color: #C71E49;}
+#GanadoresAplicacionesAvanzadas{color: #7C2979;}
+#GanadoresHardwareYRobotica{color: #398581;}
