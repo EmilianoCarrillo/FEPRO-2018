@@ -11,17 +11,18 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/master.css">
+  <link rel="stylesheet" href="master.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/sched.css">
+  <link rel="stylesheet" href="css/ganadores.css">
   <!-- AddEvent script -->
   <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
 </head>
 
 <body>
   <!-- MENU -->
-  <header class="header">
+  <header class="header mobile-only">
     <!-- Icono hamuburguesa -->
     <div class="burger">
       <div class="logo"></div>
@@ -36,14 +37,18 @@
       </div>
       <!-- Opciones del menú -->
       <ul class="menu__list">
-        <!-- <li class="menu__item"><a id="menuItemUno" href="#about" class="menu__link">iniciar sesión</a></li> -->
+        <li class="menu__item"><a id="menuItemUno" href="participante/index.php" class="menu__link">ingresar/registrarse</a></li>
+        <li class="menu__item"><a href="proyectos.html" class="menu__link">PROYECTOS PARTICIPANTES</a></li>
+        <li class="menu__item"><a href="jurado.html" class="menu__link">JURADO EVALUADOR</a></li>
         <li class="menu__item"><a href="#about" class="menu__link">¿fepro?</a></li>
         <li class="menu__item"><a href="#where" class="menu__link">cuándo y dónde</a></li>
         <li class="menu__item"><a href="#convocatoria" class="menu__link">convocatoria</a></li>
-        <!-- <li class="menu__item"><a href="#categorias" class="menu__link">categorías/impactos</a></li> -->
-        <!-- <li class="menu__item"><a href="#fases" class="menu__link">fases</a></li> -->
-        <!-- <li class="menu__item"><a href="#sched" class="menu__link">programa</a></li> -->
-        <li class="menu__item"><a href="#galeria" class="menu__link">galería</a></li>
+        <li class="menu__item"><a href="#categorias" class="menu__link">categorías</a></li>
+        <li class="menu__item"><a href="#impactos" class="menu__link">impactos</a></li>
+        <li class="menu__item"><a href="#fases" class="menu__link">fases</a></li>
+        <li class="menu__item"><a href="#recursos" class="menu__link">recursos</a></li>
+        <li class="menu__item"><a href="#programa" class="menu__link">programa</a></li>
+        <li class="menu__item"><a href="#patrocinadores" class="menu__link">patrocinadores</a></li>
         <ul>
           <li><a href="https://www.facebook.com/feprofcc/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
           <li><a href="https://twitter.com/fepro_?lang=en" target="_blank"><i class="fab fa-twitter"></i></a></li>
@@ -55,10 +60,11 @@
 
   <!-- CONTENIDO DE LA PÁGINA PRINCIPAL -->
   <div class="wrapper">
+    <!-- Banner principal -->
     <div class="container-fluid" id="banner">
       <div class="row">
         <!-- Partículas del header -->
-        <div class="container-fluid" id="particles-js"></div>
+        <div class="container-fluid particles" id="particles-js"></div>
         <!-- Partes del logo separadas para el parallax en hover -->
         <div class="col-sm" id="logoBannerContainer" data-tilt="" data-tilt-perspective="1000">
           <img src="assets/logo/letras.png" class="logoBanner">
@@ -69,31 +75,221 @@
           <img src="assets/logo/parts/4.png" alt="Logo FEPRO XI" class="logoBanner">
           <img src="assets/logo/parts/3.png" alt="Logo FEPRO XI" class="logoBanner">
           <img src="assets/logo/parts/2.png" alt="Logo FEPRO XI" class="logoBanner">
-          <img src="assets/logo/logoLetrasNoise.png" alt="Logo FEPRO XI" class="logoBannerMobile logoBanner">
         </div>
+        <img src="assets/logo/logoLetrasNoise.png" alt="Logo FEPRO XI" class="logoBannerMobile logoBanner">
+
       </div>
     </div>
 
+    <div class="container" id="GanadoresContainer">
+      <img src="assets/icons/Premiacion.png" id="GanadoresImg">
+      <h1 id="Ganadores">GANADORES</h1>
+
+      <h3 style="text-align: center">[Da click en algún proyecto para visualizar su video]</h3>
+
+      <div id="Selectors">
+        <a>APLICACIONES AVANZADAS</a>
+        <a>APLICACIONES BÁSICAS</a>
+        <a>HARDWARE Y ROBÓTICA</a>
+      </div>
+
+      <div id="AvanzadasTable" class="table-responsive-xl">
+        <table class="table table-striped table-bordered table-hover">
+          <h2>APLICACIONES AVANZADAS</h2>
+          <thead>
+            <tr>
+              <th class="lugarCol">º</th>
+              <th class="proyectoCol">Proyecto</th>
+              <th class="carreraCol">Carrera/Institución</th>
+              <th class="integrantesCol">Integrantes</th>
+              <th class="descripcionCol">Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr onclick="changeVideo('kDec-5H7NdE')">
+              <td>1º</td>
+              <td>Reconocimiento de genes en secuencias de ADN por medio de imágenes.</td>
+              <td>Fac de Cs. Computación/BUAP</td>
+              <td>Luis Angel Santamaría Colula. <br><br>
+                  Sarahi Zuñiga Herrera.</td>
+              <td>Los métodos de aprendizaje automático permiten identificar caracterí­sticas que propician la clasificación, análisis y reconocimiento de patrones. En el área de la biologí­a, el uso de métodos de aprendizaje automático, facilitan el reconocimiento de secuencias de ADN, sin embargo, los métodos utilizados actualmente se basan en el análisis directo y en formato texto de las secuencias. Este trabajo consistió en buscar una nueva forma de representar secuencias de ADN para su análisis. La propuesta que presentamos es generar imágenes a partir secuencias de ADN y someterlas a análisis por CNNs.</td>
+            </tr>
+            <tr onclick="changeVideo('womkjOb7GbI')">
+              <td>2º</td>
+              <td>FisioterApp</td>
+              <td>Fac de Cs. Computación/BUAP</td>
+              <td>David Avelino Serrano.<br><br>
+                  Herbert Joadan Romero Villarreal.<br><br> 
+                  Ricardo Altamirano Cabrera.<br><br>
+                  Victor Manuel Hernandez Ramirez.</td>
+              <td>Los problemas de comunicación debido a la distancia son problemas que la computación ha ido resolviendo con el paso del tiempo. FisioterApp es una aplicación móvil desarrollada con el fin de acercar a profesionales del área de rehabilitación con sus pacientes. La aplicación genera un historial médico de padecimientos, medicamentos y ejercicios recomendados por el fisioterapeuta. FisioterApp es una aplicación que se preocupa por la pronta rehabilitación de los pacientes, pues en muchos casos, es la misma distancia y la esporádica asistencia a sesiones lo que retrasa la recuperación.</td>
+            </tr>
+            <tr onclick="changeVideo('_XNDHCrsImo')">
+              <td>3º</td>
+              <td>Kuali</td>
+              <td>Fac de Cs. Computación/BUAP</td>
+              <td>Annette Olivares Arroyo. <br><br>
+                  Giovanny Sanchez Perez. <br><br>
+                  Guillermo Escalante Ramirez.</td>
+              <td>Kuali es un videojuego diseñado para dispositivos móviles, con dos objetivos, preservación de la cultura náhuatl y de  concientización sobre el cuidado de especies mexicanas. Es un juego diseñado en un ambiente 3D inspirado en la cultura mexicana y caracterizado por personajes animales, retomando algunas especies en peligro de extinción. El objetivo de Kuali es que el jugador pueda conocer la cultura mexicana como leyendas, tradiciones, lengua y mediante el uso de un personaje animal y que pueda conocer las especies que son tan importantes para el paí­s. </td>
+            </tr>
+            <tr onclick="changeVideo('n5FyiQ6-v9s')">
+              <td>4º</td>
+              <td>MarcadorWebDeportivo</td>
+              <td>Universidad del Valle de Puebla (UVP)</td>
+              <td>Angel Jharit Ortega de la Luz.<br><br>
+                  Jorge Nuñez López.</td>
+              <td>Actualmente ningíºn espacio deportivo cuenta con esta facilidad de llevar la estadí­stica del marcador de cada uno de los partidos en tiempo real. Por esa misma razón se diseñó una aplicación web para poder controlar un marcador digital, de esa forma poder almacenar y mostrar el orden adecuado de los puntos en cada partido de cualquier deporte. <br>
+                  El marcador cuenta con la facilidad de ser portable y manejado desde cualquier dispositivo que tenga acceso a la red y a la aplicación. Se almacenan en la base de datos los resultados finales de cada partido para tener mejores estadí­sticas.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="BasicasTable" class="table-responsive-xl">
+        <table class="table table-striped table-bordered table-hover">
+            <h2>APLICACIONES BÁSICAS</h2>
+            <thead>
+              <tr>
+                <th class="lugarCol">º</th>
+                <th class="proyectoCol">Proyecto</th>
+                <th class="carreraCol">Carrera/Institución</th>
+                <th class="integrantesCol">Integrantes</th>
+                <th class="descripcionCol">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr onclick="changeVideo('HwSPsM9U6SE')">
+                <td>1º</td>
+                <td>Sparse</td>
+                <td>Fac de Cs. Computación/BUAP</td>
+                <td>Jared Cruz Hernandez</td>
+                <td>En el presente trabajo se realizó una interfaz gráfica mediante lenguaje C, en específico la librería GTK y glade, donde se exhibe la funcionalidad de una matriz dispersa, siendo favorable para la reducción de procesos efectuados en matrices cuyas entradas son mayoritariamente iguales a cero. Para ingresar valores a la matriz hay dos opciones la primera es generando aleatoriamente la matriz y la segunda consiste en la lectura de un documento de texto. De esta manera se implementó la elaboración de un grafo a través de un comando con el software graphviz para su representación gráfica y listas ligadas.También se incorporó el producto de una matriz por un vector, la matriz dispersa se generó mediante otra matriz, con entradas distintas de cero con su respectiva fila y columna al igual que con la lista ligada. Para ambos usos resultó ser efectiva al limitarse en estos datos.</td>
+              </tr>
+              <tr onclick="changeVideo('BvkkMO8q4w4')">
+                <td>2º</td>
+                <td>Criptografia</td>
+                <td>Fac de Cs. Computación/BUAP</td>
+                <td>Alejandro Escalante Hernandez.<br><br>
+                    Diana Lopez Romero.<br><br>
+                    Javier Ramirez  Rojas.</td>
+                <td>Entre los usuarios que son conscientes que en el ciberespacio las amenazas de robo de información, tanto personal como financiera, son cada dí­a mas importantes.Este royecto consiste en cifrar y descifrar un criptograma. Un criptograma es un fragmento de mensaje cifrado, y cuyo significado resulta ininteligible hasta que es descifrado. En este proyecto se incluye la implementación de 4 de los siguientes algoritmos de encriptación por sustitución, Cifrado Polybios,Cifrado de Playfair,cifrado Vigenere y cifrado Vernam.</td>
+              </tr>
+              <tr onclick="changeVideo('YJPRIhUCZ84')">
+                <td>3º</td>
+                <td>Rulz-Drive</td>
+                <td>Fac de Cs. Computación/BUAP</td>
+                <td>Lucero del Carmen Jurado Cruz.<br><br>
+                    Ricardo Zavala Gonzalez.</td>
+                <td>El proyecto consiste en una aplicación móvil, cuyo objetivo es ser una herramienta para la educación sobre la cultura vial, al dar a conocer el reglamento y las señales de tránsito, para dos tipos de usuarios, niños y adultos, de tal manera que, para los usuarios que sean niños se hará mediante un juego interactivo, contará una parte teórica, para posteriormente realizar una actividad (juego) en la que se calificaran los conocimientos que haya adquirido. Mientras que para los usuarios adultos se presentara una parte teórica, una parte práctica y al final un test para evaluar sus conocimientos.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div id="HardwareTable" class="table-responsive-xl">
+          <table class="table table-striped table-bordered table-hover">
+              <h2>HARDWARE & ROBÓTICA</h2>
+              <thead>
+                <tr>
+                  <th class="lugarCol">º</th>
+                  <th class="proyectoCol">Proyecto</th>
+                  <th class="carreraCol">Carrera/Institución</th>
+                  <th class="integrantesCol">Integrantes</th>
+                  <th class="descripcionCol">Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr onclick="changeVideo('0Q-FZfiwKjw')">
+                  <td>1º</td>
+                  <td>Robot Submarino</td>
+                  <td>Fac de Cs. Computación/BUAP</td>
+                  <td>Aldo Rodríguez Victoria</td>
+                  <td>El proyecto está enfocado en el desarrollo y la implementación de un sistema controlado capas de hacer un analisis de agua a distintos niveles de profundidad, generación de mapas de suelo marino, y que por medio de una tarjeta controladora, distintos tipos de sensores y un sistema embebido de visión, enviara las señales que se requieran para manipular el movimiento del robot y analisizara los distintos datos en tiempo real para devolver los resultados a una aplicacion movil. </td>
+                </tr>
+                <tr onclick="changeVideo('yHfpk_QorT8')">
+                  <td>2º</td>
+                  <td>ALIVE</td>
+                  <td>Fac de Cs. Computación/BUAP</td>
+                  <td>Cristopher Manuel Rivas Aguilar.<br><br>
+                      Xavier González de la Cruz.<br><br>
+                      Dulce Maria Cuautle Santos.<br><br>
+                      Jesus Garcia Gutierrez.
+                  </td>
+                  <td>En México miles de personas sufren de enfermedades cardio respiratorias. Para poder darles una atención medica de nivel se necesitan instrumentos que por lo general son muy costosos y son producidos en el extranjero, pensando en esta problemática desarrollamos ALIVE un conjunto de instrumentos médicos electrónicos para el cuidado del corazón y la salud en general, como lo son: ECG ,termómetro, sensor de ritmo cardiaco y estetoscopio. Utilizando tecnologí­as como bluetooth y Smartphones con sistema Android. Todo para ofrecer a los médicos un instrumento versátil y compacto para la auscultación.</td>
+                </tr>
+                <tr onclick="changeVideo('2OiqIYxaGm8')">
+                  <td>3º</td>
+                  <td>Robot Rescue</td>
+                  <td>Universidad Politécnica de Querétaro (UPQ)</td>
+                  <td>López Barron Oscar Enrique. <br><br>
+                      Montes Ortiz Edgar Abdel. <br><br>
+                      Emanuel Arnulfo Luna Salgado. <br><br>
+                      Mario Alberto Testa Morales</td>
+                  <td> En este trabajo se presenta el diseño y construcción de un Robot Rescue explorador para zonas de desastre, permitiendo identificar el estado de las víctimas y tomar las medidas necesarias para su rescate. El sistema es controlado mediante una Raspberry PI3, teleoperado con visión punto a punto para monitoreo a distancia de cámaras, micrófonos y sistemas de mapeo. Al ser en zonas con escombros y terrenos irregulares es necesaria una tracción oruga con estilo tanque de guerra para no tener problemas de atascamientos como los de una llanta convencional.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+    </div>
+
+  
+
+
     <!-- Carta que contiene el reloj contador  -->
-    <div class="container section-card" id="card-info">
+    <!-- <div class="container section-card" id="card-info">
       <div class="row">
         <div class="col-sm">
-          <h3 id="counter">
-                <span>Faltan</span> <span class="dot">:</span>
-                <span id="dias">  </span> <span class="dot">&middot;</span>
-                <span id="horas"> </span> <span class="dot">&middot;</span>
-                <span id="minutos">  </span>
-              </h3>
+          <h1 id="Ganadores">¡FELICIDADES!<br> 
+            ESTOS SON LOS PROYECTOS QUE PASAN A LA GRAN FINAL</h1>
+          <h4 id="Recordatorio">[Los proyectos aparecen en orden alfabético]</h4>
+          <div id="GanadoresAplicacionesBasicas">
+            <strong><h3>Aplicaciones Básicas:</h3></strong>
+            <ul>
+              <li>Criptografía</li>
+              <li>Identificador de Componentes</li>
+              <li>Rulz-Drive</li>
+              <li>Sparse</li>
+            </ul>
+          </div>
+          <div id="GanadoresAplicacionesAvanzadas">
+          <strong><h3>Aplicaciones Avanzadas:</h3></strong>
+            <ul>
+              <li>FisioterApp</li>
+              <li>Káhool</li>
+              <li>Kuali</li>
+              <li>MarcadorWebDeportivo</li>
+              <li>Reconocimiento de genes en secuencias de ADN por medio de imágenes.</li>
+              <li>Solutions internet of things (SIOT)</li>
+            </ul>
+          </div>
+          <div id="GanadoresHardwareYRobotica">
+            <strong><h3>Hardware y Robótica:</h3></strong>
+            <ul>
+              <li>ALIVE</li>
+              <li>Bastón Electrónico</li>
+              <li>ROBOT RESCUE</li>
+              <li>Robot Submarino</li>
+              <li>Sistema Automatizado para la Producción Orgánica de Alimentos en Áreas Urbanas y Periurbanas para Personas con Capacidades Diferentes</li>
+            </ul>
+          </div>
         </div>
       </div>
+    </div> -->
+
+    <div class="container" id="FeriaReclutamiento">
+      <h3>¡Consigue tu cita, conoce tu nuevo trabajo!</h3>
+      <button onclick="location.href='https://feria-de-reclutamiento-fepro2018.reservio.com/'" >FERIA DE RECLUTAMIENTO</button>
     </div>
+    
 
     <!-- ¿QUÉ ES FEPRO? -->
     <div class="container section" id="about">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-4">
-            <video class="col-md-12" src="assets/gif.mov" id="video" autoplay loop muted></video>
+            <img class="col-md-12" src="assets/gif.gif" id="video" autoplay loop muted></img>
           </div>
           <div class="col-md-8">
             <h3 class="section-heading">¿Qué es FEPRO?<span class="blink">_</span></h3>
@@ -142,39 +338,276 @@
         <div class="row">
           <div class="col-md-12">
             <h3 class="section-heading">Convocatoria<span class="blink">_</span></h3>
-            <!-- Convocatoria almacenada en Google Drive -->
-            <a target="_blank" href="assets/convocatoria/convocatoria.jpg">
-              <img width="100%" object-fit="contain" class="overlay" src="assets/convocatoria/convocatoria.jpg" alt="Convocatoria">
-            </a>
+            <!-- Convocatoria-->
+            <div class="overlay" target="_blank" style="overflow-y:scroll; height: 60vh;">
+              <a target="_blank" href="assets/convocatoria/convocatoria.jpg"><img width="100%" object-fit="contain" class="overlay" src="assets/convocatoria/convocatoria.jpg" alt="Convocatoria"></a>
+            </div>
             <!-- <iframe class="overlay " src="assets/convocatoria/convocatoria.jpg" width="100%" object-fit="contain" class="overlay"></iframe> -->
             <div class="columns download">
-              <h2 id="convocatoriaDownload"><a target="_blank" href="assets/convocatoria/convocatoria.pdf" download>Descargar convocatoria ❯</a></h2>
+              <h2 id="convocatoriaDownload"><a target="_blank" href="assets/convocatoria/convocatoria.pdf" download>Descargar convocatoria completa ❯</a></h2>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- TODO: PROBAR SCHED -->
-    <!-- <a id="sched-embed" href="http://fepro2018.sched.com/list/descriptions/">View the FEPRO schedule &amp; directory.</a><script type="text/javascript" src="http://fepro2018.sched.com/js/embed.js"></script> -->
-    <!--
-    <!- PROGRAMA DEL EVENTO ->
+    <!-- CATEGORÍAS -->
+    <div class="container section" id="categorias">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-heading">Categorías<span class="blink">_</span></h3>
+
+            <div class="categoriasWrapper">
+              <div class="categoriasCards">
+                <h1>&lt;aplicaciones básicas/&gt;</h1>
+              </div>
+              <p class="moreInfo">
+                Participan proyectos con las siguientes características:<br/><br/>
+                <span>● Software Básico:</span><br/> Aplicaciones de escritorio con una interfaz gráfica sencilla o incluso de consola/terminal; deben resolver algún problema clásico de programación o matemáticas utilizando estructuras de datos y/o manejo
+                de archivos.<br/><br/>
+                <span>● Aplicaciones Web Básicas</span><br/> Aplicaciones que sean ejecutables sobre cualquier navegador Web y que implementen el modelo de comunicación cliente-servidor mediante una interfaz usable. Deben mostrar el uso apropiado de Tecnologías
+                Web elementales; tanto del lado del cliente como del lado del servidor.<br/><br/>
+                <span>● Aplicaciones Móviles Básicas:</span><br/> Aplicaciones sencillas ejecutables sobre dispositivos móviles (smartphones, tablets, iPads o smartwatches); que demuestren el uso apropiado de herramientas especiales para el desarrollo
+                de este tipo de aplicaciones. Deben representar claramente la idea de una propuesta novedosa y puede contar con una interfaz simple pero funcional.<br/>
+              </p>
+            </div>
+
+            <div class="categoriasWrapper">
+              <div class="categoriasCards">
+                <h1>&lt;aplicaciones avanzadas/&gt;</h1>
+              </div>
+              <p class="moreInfo">
+                Participan proyectos con las siguientes características:<br/><br/>
+                <span>● Software Especializado:</span><br/> Aplicaciones con una interfaz gráfica elaborada que emplee conceptos de usabilidad y se haya usado Ingeniería de Software para su desarrollo. Deben resolver algún problema complejo de la ciencia
+                o la industria utilizando estructuras de datos abstractas, análisis estadístico, análisis de datos, técnicas de IA, cómputo distribuido/paralelo o consumo e implementación de servicios en la nube.<br/><br/>
+                <span>● Aplicaciones Web Especializadas:</span><br/> Aplicaciones que sean ejecutables sobre cualquier navegador Web y que implementen el modelo de comunicación cliente-servidor mediante una interfaz bien diseñada. Deben ofrecer algún
+                tipo de servicio en línea que resuelva algún problema relacionado con las TIC. Todo esto mediante el acoplamiento eficiente de Tecnologías Web para el Front-End y el Back-End. Así mismo debe hacer uso de conceptos de Ingeniería Web.<br/><br/>
+                <span>● Aplicaciones Móviles Especializadas:</span><br/> Aplicaciones robustas ejecutables sobre dispositivos móviles (smartphones, tablets, iPads o smartwatches); con conexión a internet y a bases de datos. Deben ofrecer alguna solución
+                novedosa que justifique su utilidad móvil, por lo que pueden consumir servicios Web y deben contar con una interfaz intuitiva y funcional.<br/><br/>
+                <span>● Internet de las cosas (IoT):</span><br/> Aplicaciones o dispositivos complejos que permitan la interconexión digital de objetos cotidianos con Internet; deben integrar sensores inteligentes conectados a Internet a través de redes
+                fijas o inalámbricas, por lo que se requiere la implementación de un sistema que perciba su ambiente de ejecución y se adapte a él dinámicamente. Por ejemplo, automatización de viviendas, sistemas de seguridad, gestión energética, bienestar
+                o comunicaciones, entre otros.
+              </p>
+            </div>
+
+            <div class="categoriasWrapper">
+              <div class="categoriasCards">
+                <h1>&lt;aplicaciones de gráficos por computadora/&gt;</h1>
+              </div>
+              <p class="moreInfo">
+                Participan proyectos con las siguientes características:<br/><br/>
+                <span>● Simulaciones 3D:</span><br/> Aplicaciones que involucren la implementación de un sistema con ambientes gráficos (2D o 3D), ejecutables sobre PC o dispositivos móviles; deben ayudar a la demostración visual de conceptos científicos,
+                a la toma de decisiones en ambientes simulados, o a la prevención ante desastres de algún tipo.<br/><br/>
+                <span>● Realidad Virtual:</span><br/> Aplicaciones interactivas que involucren la implementación de un sistema con ambientes gráficos 3D; deben sumergir completamente a los usuarios dentro de un mundo virtual, y deben tener un propósito
+                específico (social, comercial, recreativo). Deben hacer uso de herramientas y técnicas especializadas.<br/><br/>
+                <span>● Realidad Aumentada:</span><br/> Aplicaciones interactivas que involucren la implementación de un sistema que realice una composición armónica de imágenes (obtenidas desde una cámara) y objetos 2D/3D en tiempo real; deben mejorar
+                o aumentar el entorno de los usuarios agregando información adicional o modificando la realidad a través de elementos sintéticos como imágenes, objetos y/o personajes. Deben tener un propósito específico (social, comercial, recreativo).
+                Deben hacer uso de herramientas y técnicas especializadas.<br/><br/>
+                <span>● Videojuegos:</span><br/> Aplicaciones interactivas que involucren la implementación de un sistema con ambientes gráficos (2D o 3D), ejecutables sobre PC, consolas o dispositivos móviles; deben atrapar a los usuarios en conflictos
+                estructurados aplicando el concepto de jugabilidad.
+              </p>
+            </div>
+
+            <div class="categoriasWrapper">
+              <div class="categoriasCards">
+                <h1>&lt;hardware y robótica/&gt;</h1>
+              </div>
+              <p class="moreInfo">
+                Entidades físicas que sean multifuncionales y reprogramables que involucren la aplicación de conocimientos en electrónica, mecánica, programación y/o robótica; deben solucionar algún problema complejo o realizar alguna tarea específica con cierto grado
+                de dificultad.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMPACTOS -->
+    <div class="container section" id="impactos">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-heading">Impactos<span class="blink">_</span></h3>
+            <div class="row">
+              <div class="col-md-4 iconsImpactos">
+                <img src="assets/icons/impactoSocial.png" alt="Impacto Social">
+                <div class "cross"></div>
+                <h3>Impacto Social</h3>
+                <p>Es el efecto positivo que produce el proyecto en la calidad de vida de la población a nivel local, estatal, nacional o internacional. Los resultados pueden ser apreciados a corto, mediano o largo plazo.</p>
+              </div>
+              <div class="col-md-4 iconsImpactos">
+                <img src="assets/icons/impactoComercial.png" alt="Impacto Comercial">
+                <div class "cross"></div>
+                <h3>Impacto Comercial</h3>
+                <p>Es el efecto positivo que produce el proyecto sobre los ingresos y egresos de una o más personas, una empresa o una institución. Por lo que siempre debe ser mayor la magnitud o grado de beneficio obtenido que el costo de desarrollo del
+                  proyecto.</p>
+              </div>
+              <div class="col-md-4 iconsImpactos">
+                <img src="assets/icons/impactoCientifico.png" alt="Impacto Científico">
+                <div class "cross"></div>
+                <h3>Impacto Científico</h3>
+                <p>Es el efecto positivo que produce el proyecto para la ciencia de forma universal. Por lo que la información presentada y los resultados obtenidos serán útiles para cualquier persona que los consulte y servirán como base para nuevas ideas
+                  y otros estudios.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FASES -->
+    <div class="container section" id="fases">
+      <div class="container-fluid">
+        <h3 class="section-heading">Fases<span class="blink">_</span></h3>
+        <!-- PRIMER FASE -->
+        <div class="row fasesContainer">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-4 fasesIcons">
+                <img src="assets/icons/Fase 1.png" alt="Impacto Social">
+              </div>
+              <div class="col-md-8">
+                <div class "cross"></div>
+                <h3> 1. Registra Tu Idea</h3>
+                <h2>del 27 de abril al 18 de Junio</h2>
+                <p>● Crea una cuenta y registra la siguiente información: <br>
+                  <span style="padding-left: 30px">a. Integrantes del equipo. <br></span>
+                  <span style="padding-left: 30px">b. Categoría. <br></span>
+                  <span style="padding-left: 30px">c. Impacto. <br></span>
+                  <span style="padding-left: 30px">d. Resúmen del proyecto. <br></span>
+                  ● Descargar el formato de registro de asesor para llenarlo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- SEGUNDA FASE -->
+        <div class="row fasesContainer">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-8">
+                <div class "cross"></div>
+                <h3>2. Concluye Tu Registro De Proyecto</h3>
+                <h2>del 19 de Junio al 13 de Agosto</h2>
+                <p>
+                  ● Subir archivo de proyecto en formato IEEE.<br>
+                  ● Proporcionar URL del video del proyecto (90 segundos).<br>
+                  ● Cargar formato de registro del asesor.<br>
+                  ● Cargar el comprobante de pago de cuota.<br>
+                </p>
+              </div>
+              <div class="col-md-4 fasesIcons">
+                <img src="assets/icons/Fase 2.png" alt="Impacto Social">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- TERCER FASE -->
+        <div class="row fasesContainer">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-4 fasesIcons">
+                <img src="assets/icons/Fase 3.png" alt="Impacto Social">
+              </div>
+              <div class="col-md-8">
+                <div class "cross"></div>
+                <h3>3. (Día 1) Exposición Y Eliminatoria.</h3>
+                <h2>13 de Septiembre : Presencial</h2>
+                <h2><strong>La exposición del proyecto se llevará a cabo de forma abierta al público en general.</strong></h2>
+                <p>
+                  ● Llevar material de exposición.<br>
+                  ● Evaluación y selección de finalistas:<br>
+                  <span style="padding-left: 30px">a. Llevar cartel con formato IEEE. <br></span>
+                  <span style="padding-left: 30px">b. Mostrar el video del proyecto en todo momento. <br></span>
+                  <span style="padding-left: 30px">c. Exponer su proyecto y contestar las preguntas del jurado. <br></span>
+                  <span style="padding-left: 30px">d. Permanecer en su stand durante todo el tiempo de la exposición.<br></span>
+                  <span style="padding-left: 30px"><strong>e. Anuncio de Finalistas: A partir de la 17:00 hrs,
+                                                    a través de la página y medios oficiales de FePro 2018</strong><br></span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- CUARTA FASE -->
+        <div class="row fasesContainer">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-8">
+                <div class "cross"></div>
+                <h3>4. (Día 2) Sesión De Presentaciones Y Gran Final.</h3>
+                <h2>14 de Septiembre : Presencial</h2>
+                <p>
+                  ● Se realizarán presentaciones orales simultáneas por categoría en dos salas del Centro de Convenciones del CCU-BUAP<br>
+                </p>
+              </div>
+              <div class="col-md-4 fasesIcons">
+                <img src="assets/icons/Fase 4.png" alt="Impacto Social">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- PREMIACION -->
+        <div class="row fasesContainer">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-4 fasesIcons">
+                <img src="assets/icons/Premiacion.png" alt="Impacto Social">
+              </div>
+              <div class="col-md-8">
+                <div class "cross"></div>
+                <h3>PREMIACIÓN</h3>
+                <h2>14 de Septiembre 2018 14:00 hrs</h2>
+                <p>
+                  ● Se premiará a los mejores proyectos de cada categoría con equipos electrónicos, acordes a la categoría.<br>
+                  ● Se otorgarán acreditaciones a eventos nacionales o internacionales a los mejores proyectos por área de impacto. <br>
+                  ● En caso de que un equipo haya obtenido un premio y no esté presente al momento de la premiación, perdería su derecho a este.<br>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="columns download">
+          <h2 id="convocatoriaDownload"><a target="_blank" href="assets/convocatoria/convocatoria.pdf" download>Para mayor información, consultar convocatoria completa ❯</a></h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- RECURSOS -->
+    <div class="container section" id="recursos">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-heading">Recursos<span class="blink">_</span></h3>
+            <!-- <iframe class="overlay " src="assets/convocatoria/convocatoria.jpg" width="100%" object-fit="contain" class="overlay"></iframe> -->
+            <div class="columns download">
+              <h2 id="recursosDownload"><a target="_blank" href="recursos/logo.png" download>Descargar el logo de Fepro 2018 ❯</a></h2>
+              <h2 id="recursosDownload"><a target="_blank" href="recursos/articulos_IEEE.docx" download>Descargar el formato del Articulo IEEE ❯</a></h2>
+              <h2 id="recursosDownload"><a target="_blank" href="recursos/cartel_ieee.pdf" download>Descargar el formato del Cartel IEEE ❯</a></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROGRAMA DEL EVENTO -->
     <section id="ts-schedule" class="container section ts-schedule">
-      <h3 class="section-heading">Programa del evento<span class="blink">_</span></h3>
-      <!- Title row end ->
+      <h3 id="programa" class="section-heading">Programa del evento<span class="blink">_</span></h3>
+      <!-- Title row end -->
       <div class="row">
         <div class="col-md-12">
           <div class="schedule-tab">
-            <!- Seleccionador de día ->
+            <!-- Seleccionador de día -->
             <ul class="nav nav-tabs" id="nav-tabs">
-              <li class="active">
+              <li class="btn-sched active">
                 <a class="animated fadeIn" href="#tab_one" data-toggle="tab" aria-expanded="true">
                                   <span  class="tab-head">
                                   <span class="tab-text-title">Día uno</span>
                                   </span>
                                   </a>
               </li>
-              <li class="">
+              <li class="btn-sched">
                 <a class="animated fadeIn" href="#tab_two" data-toggle="tab" >
                                   <span class="tab-head">
                                   <span class="tab-text-title">Día dos</span>
@@ -183,140 +616,509 @@
               </li>
             </ul>
 
-            <!- Contenido día 1 ->
+            <!-- Contenido día 1 -->
             <div class="tab-content">
               <div class="tab-pane animated fadeInRight active" id="tab_one">
                 <h2 class="schedule-date">Jueves, 13 de Septiembre 2018</h2>
-                <!- Tarjeta ->
+                <!-- Tarjeta -->
                 <div class="schedule-listing bg">
-                  <span class="schedule-slot-time">9:30 - 10:00</span>
+                  <span class="schedule-slot-time">8:00 - 9:00</span>
                   <div class="schedule-slot-info">
                     <div class="schedule-slot-info-content">
-                      <h3 class="schedule-slot-title">Registration</h3>
-                      <p class="schedule-slot-desc">Pick up your name badge and goodie bag</p>
+                      <h3 class="schedule-slot-title">REGISTRO</h3>
+                      <p class="schedule-slot-lugar">@ CCU</p>
                     </div>
                   </div>
                 </div>
-                <!- Tarjeta ->
+                <!-- Tarjeta -->
                 <div class="schedule-listing">
-                  <span class="schedule-slot-time">10:30 - 11:15AM</span>
+                  <span class="schedule-slot-time">8:00 - 9:00</span>
                   <div class="schedule-slot-info">
-                    <a href="#">
-                                        <img class="schedule-slot-speakers" src="images/speakers/speaker1.jpg" alt="">
-                                        </a>
                     <div class="schedule-slot-info-content">
-                      <h3 class="schedule-slot-speaker-name">Edward C. Horner</h3>
-                      <h4 class="schedule-slot-title">Reinventing Experiences to All</h4>
-                      <p class="schedule-slot-desc">Throw myself down teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable.</p>
+                      <h3 class="schedule-slot-title">INSTALACIÓN DE EQUIPOS</h3>
+                      <p class="schedule-slot-lugar">@ CCU</p>
                     </div>
                   </div>
                 </div>
-                <!- Tarjeta ->
+                <!-- Tarjeta -->
                 <div class="schedule-listing bg">
-                  <span class="schedule-slot-time">11:15 - 13:15PM</span>
+                  <span class="schedule-slot-time">09:00 - 09:40</span>
                   <div class="schedule-slot-info">
                     <a href="#">
-                                        <img class="schedule-slot-speakers" src="images/speakers/speaker5.jpg" alt="">
-                                        </a>
+                                        <img class="schedule-slot-speakers" src="assets/speakers/MichelMorales.jpg" alt="">
+                    </a>
                     <div class="schedule-slot-info-content">
-                      <h3 class="schedule-slot-speaker-name">Summer Cross</h3>
-                      <h4 class="schedule-slot-title">Human Centered Design </h4>
-                      <p class="schedule-slot-desc">Minim Austin 3 wolf moon scenester aesthetic, umami odio pariatur bitters. Pop-up occaecat taxidermy street art, tattooed beard literally.</p>
+                      <h3 class="schedule-slot-speaker-name">Michel Morales</h3>
+                      <h3 class="schedule-slot-speaker-place">TeslaBem</h3>
+                      <p class="schedule-slot-lugar">@ Aula Virtual</p>
+                      <h4 class="schedule-slot-title">Cómo cualquier idea se hace imparable a través de la colaboración humana. </h4>
+                      <p class="schedule-slot-desc">
+                        Actualmente soy presidente del Consejo Administrativo de Grupo Inbuce. Corporativo que se especializa en la creación de soluciones basadas en tecnología, tanto hardware como software, para organizaciones de iniciativa privada y pública.<br/><br/>
+                        Tengo una carrera como Técnico en Electrónica.<br/>
+                        Estudié Ciencias de la Computación en la Benemérita Universidad Autónoma de Puebla.<br/>
+                        Hice un Diplomado en Habilidades Gerenciales con metodología Harvard Manager Mentor Plus.<br/><br/>
+                        Entre el año 2010 y 2011 co-fundé la marca T-Bem Robótica y Electrónica. Empresa especializada en ayudar a la humanidad a entender y aplicar la tecnología. Posteriormente, yo junto con mis socios fundamos Autracen. El enfoque de esta marca es desarrollar tecnología para empresas y fábricas, enfrentando uno de los principales retos globales que es la digitalización de la industria de la manufactura y producción, para impulsar la nueva revolución de la Industria 4.0.<br/> Debido a las necesidades de implementar proyectos robustos en software, creamos también Zankya Digital. Esta línea de negocio se encarga de desarrollar sistemas de software y aplicaciones en la nube, capaces de interactuar con hardware para integrar sistemas automatizados.<br/><br/>
+                        Grupo Inbuce SAPI de CV es el holding que creamos para cobijar a las 3 marcas anteriores. Con la idea de que bajo una misma misión, visión, liderazgo y objetivos, las marcas continúen su crecimiento y expansión en todo México y América Latina.<br/><br/>
+                        Hoy estamos desarrollando proyectos con tecnología generando un impacto social. Hemos trabajado con soluciones para la industria automotriz con robótica colaborativa y automatización de líneas de producción con visión artificial. Incursionamos en la industria aeroportuaria con la implementación de sistemas en logística y de ahorro de energía. Impulsamos el sector apícola y agrícola para hacer más eficientes sus procesos productivos utilizando tecnología.<br/><br/>
+                        Dentro de nuestra organización estamos aferrados con una sola idea, por la que nos levantamos todos los días creyentes de que lo estamos logrando: Llevar nuestras marcas, negocios y servicios a todo el mundo y a otros planetas.<br/>
+                      </p>
                     </div>
                   </div>
                 </div>
-                <!- Tarjeta ->
+                <!-- Tarjeta -->
                 <div class="schedule-listing">
-                  <span class="schedule-slot-time">13:30 - 14:30PM</span>
+                  <span class="schedule-slot-time">09:40 - 10:30</span>
                   <div class="schedule-slot-info">
+                    <a href="https://ccc.inaoep.mx/~carranza/" target="_blank">
+                                        <img class="schedule-slot-speakers" src="assets/speakers/DrJoseMartinezCarranza.jpg" alt="">
+                    </a>
                     <div class="schedule-slot-info-content">
-                      <h3 class="schedule-slot-title">Lunch</h3>
-                      <p class="schedule-slot-desc">Five star buffet for everybody.</p>
+                      <h3 class="schedule-slot-speaker-name">Dr. José Martínez Carranza</h3>
+                      <h3 class="schedule-slot-speaker-place">Departamento de Ciencias Computacionales. Instituto Nacional de Astrofísica Óptica y Electrónica (INAOE)</h3>
+                      <p class="schedule-slot-lugar">@ Aula Virtual</p>
+                      <h4 class="schedule-slot-title conferencia-magistral">CONFERENCIA MAGISTRAL</h4>
+                      <h4 class="schedule-slot-title">Drones Autónomos Inteligentes</h4>
+                      <p class="schedule-slot-desc">Soy un Investigador Titular de Nivel A (equivalente a Profesor Asociado) en el Departamento de Ciencias de la Computación en el Instituto Nacional de Astrofísica Óptica y Electrónica (INAOE) con sede en la ciudad de Puebla, en México.
+                      <br><br>Actualmente, trabajo en vehículos aéreos no tripulados (drones), en particular en vuelos autónomos en entornos denegados por GPS, para lo cual combino técnicas avanzadas de visión y robótica, como la localización visual simultánea y el mapeo (SLAM visual) en tiempo real.
+                      <br><br>También dirijo un equipo mexicano que ha logrado un desempeño sobresaliente en competiciones internacionales de drones. Mi equipo es el primer equipo mexicano en ganar un Campeonato Internacional de Drone al ganar el 1er Lugar en la competencia IROS 2017 Autonomous Drone Racing. Mi equipo también ganó el 2 ° lugar en la competencia internacional de microvehículos (IMAV) 2016.</p>
                     </div>
                   </div>
                 </div>
-                <!- Tarjeta ->
-                <div class="schedule-listing bg">
-                  <span class="schedule-slot-time">14:35 - 16:00PM</span>
+                <!-- Tarjeta -->
+                <div class="schedule-listing bg important">
+                  <span class="schedule-slot-time">10:30 - 10:45</span>
                   <div class="schedule-slot-info">
-                    <a href="#">
-                                        <img class="schedule-slot-speakers" src="images/speakers/speaker3.jpg" alt="">
-                                        </a>
+                    <div class="schedule-slot-info">
+                      <div class="schedule-slot-info-content">
+                        <h3 class="schedule-slot-title">INAUGURACIÓN</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Tarjeta -->
+                <div class="schedule-listing">
+                  <span class="schedule-slot-time">10:45 - 11:00</span>
+                  <div class="schedule-slot-info">
+                    <div class="schedule-slot-info">
+                      <div class="schedule-slot-info-content">
+                        <h3 class="schedule-slot-title">Fotografía Grupal</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Tarjeta -->
+                <div class="schedule-listing bg important">
+                  <span class="schedule-slot-time">11:00 - 15:00</span>
+                  <div class="schedule-slot-info">
+                    <div class="schedule-slot-info">
+                      <div class="schedule-slot-info-content">
+                        <h3 class="schedule-slot-title">EXPOSICIÓN DE PROYECTOS</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Tarjeta -->
+                <div class="schedule-listing">
+                  <span class="schedule-slot-time">15:00 - 16:00</span>
+                  <div class="schedule-slot-info">
+
                     <div class="schedule-slot-info-content">
-                      <h3 class="schedule-slot-speaker-name">Laura Bryant</h3>
-                      <h4 class="schedule-slot-title">A frontier for designers: cultures of creativity</h4>
-                      <p class="schedule-slot-desc">Plaid fashion axe semiotics skateboard, try-hard food truck aesthetic biodiesel exercitation. Accusamus VHS Wes Anderson Banksy food truck vero.</p>
+                      <h3 class="schedule-slot-speaker-name">Full Stack, Poliment, Ficha Studio</h3>
+                      <p class="schedule-slot-lugar">@ Aula Virtual</p>
+                      <h4 class="schedule-slot-title">Casos de éxito FEPRO</h4>
+                      <p class="schedule-slot-desc">
+                          <strong>15:00 - 15:20</strong> Poliment (Alfredo Carreño Herrera, Julio Álvarez  Galicia) <br/>
+                          <strong>15:20 - 15:40</strong> Full Stack (Isaías Carrera Ventura, Luis Conde Rodriguez)<br/>
+                          <strong>15:40 - 16:00</strong> Ficha Studio (Luis Alberto Espíritu Cedeño, José Luis Estrada Martínez)<br/>
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <!- Tarjeta ->
+              <!-- SEGUNDO DÍA -->
               <div class="tab-pane animated fadeInRight" id="tab_two">
                 <h2 class="schedule-date">Viernes, 14 de Septiembre 2018</h2>
-                <div class="schedule-listing">
-                  <span class="schedule-slot-time">09:30 - 11:15AM</span>
-                  <div class="schedule-slot-info">
-                    <a href="#">
-                                        <img class="schedule-slot-speakers" src="images/speakers/speaker4.jpg" alt="">
-                                        </a>
-                    <div class="schedule-slot-info-content">
-                      <h3 class="schedule-slot-speaker-name">Avdei Ignatyev</h3>
-                      <h4 class="schedule-slot-title">Getting Started With User-Centered Content</h4>
-                      <p class="schedule-slot-desc">Throw myself down teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable.</p>
-                    </div>
-                  </div>
-                </div>
-                <!- Tarjeta ->
+                <!-- Tarjeta -->
                 <div class="schedule-listing bg">
-                  <span class="schedule-slot-time">11:15 - 13:15PM</span>
+                  <span class="schedule-slot-time">8:00 - 8:45</span>
                   <div class="schedule-slot-info">
-                    <a href="#">
-                                        <img class="schedule-slot-speakers" src="images/speakers/speaker7.jpg" alt="">
-                                        </a>
                     <div class="schedule-slot-info-content">
-                      <h3 class="schedule-slot-speaker-name">Eden Nivison</h3>
-                      <h4 class="schedule-slot-title">Content Measurement and Analytics</h4>
-                      <p class="schedule-slot-desc">Minim Austin 3 wolf moon scenester aesthetic, umami odio pariatur bitters. Pop-up occaecat taxidermy street art, tattooed beard literally.</p>
+                      <h3 class="schedule-slot-title">REGISTRO</h3>
+                      <p class="schedule-slot-lugar">@ CCU</p>
                     </div>
                   </div>
                 </div>
-                <!- Tarjeta ->
+                <!-- Tarjeta -->
                 <div class="schedule-listing">
-                  <span class="schedule-slot-time">13:30 - 14:30PM</span>
+                  <span class="schedule-slot-time">09:10 - 10:00</span>
                   <div class="schedule-slot-info">
+                    <a href="" target="_blank">
+                        <img class="schedule-slot-speakers" src="assets/speakers/DrRaulRojasGonzalez.png" alt="">
+                    </a>
                     <div class="schedule-slot-info-content">
-                      <h3 class="schedule-slot-title">Lunch</h3>
-                      <p class="schedule-slot-desc">Five star buffet for everybody.</p>
+                      <h3 class="schedule-slot-speaker-name">Dr. Raúl Rojas González</h3>
+                      <h3 class="schedule-slot-speaker-place">Líder del  Laboratorio “Dahlem <br>Center for Machine Learning and Robotics” <br>Universidad Libre de Berlín, Alemania</h3>
+                      <p class="schedule-slot-lugar">@ Sala 1 del Centro de Convenciones</p>
+                      <h4 class="schedule-slot-title conferencia-magistral">CONFERENCIA MAGISTRAL</h4>
+                      <h4 class="schedule-slot-title">Auto Autónomo</h4>
+                      <p class="schedule-slot-desc">
+                        El Dr. Raúl Rojas González es uno de los científicos mexicanos más conocidos a nivel mundial en
+                        el campo de las ciencias de la computación y mecatrónica. Ha sido campeón mundial de
+                        robótica en dos ocasiones (2004 y 2005) y sus vehículos autónomos circulan por las calles de
+                        Berlín desde 2007. El vehículo “MadeInGermany” fue presentado en México en octubre de 2012
+                        y pudo ser visto circulando sin chofer por el primer cuadro de la ciudad. En marzo de 2015 el Dr.
+                        Rojas recibió el premio como Profesor del Año, un galardón otorgado por la Sociedad de
+                        Profesores de Alemania.<br><br>
+                        El Dr. Rojas se ha distinguido académicamente desde sus primeros estudios. Es egresado de la
+                        Escuela Superior de Física y Matemáticas del IPN. Obtuvo la Medalla CONACYT-Diario de México
+                        dentro del programa “Mejor Estudiante de México”, por haber recibido el mejor promedio de su
+                        generación. Obtuvo también el titulo de Maestría en Matemáticas en el IPN y cursó todos los
+                        créditos de la Maestría en Economía en la UNAM. Antes de partir a Alemania para obtener su
+                        doctorado, Raúl Rojas fue profesor “Titular C” en la ESFM del IPN, profesor de asignatura en la
+                        UNAM, y líder del grupo Sistemas Operativos del Instituto Nacional de Investigaciones Nucleares
+                        en Salazar. <br><br>
+                        El Dr. Rojas ha dirigido numerosos proyectos de alta tecnología. Basta mencionar los siguientes:
+                        a) Vehículos autónomos que tienen ya el permiso de circular en Berlín. Con el vehículo “Spirit of
+                        Berlin” la Universidad de Berlín y el IPN pudieron llegar a la semifinal de la competencia “Urban
+                        Challenge” en California en 2007; b) Robots para jugar futbol. El Dr. Rojas ganó dos veces el
+                        campeonato mundial y fue subcampeón mundial en otras seis ocasiones con tres diferentes
+                        plataformas robóticas. El Dr. Rojas es hasta ahora el único científico mexicano que ha logrado
+                        sobresalir de esta manera; c) Aparatos de lectura para ciegos, es decir cámara de video
+                        montadas en gafas que leen automáticamente texto. Por este sistema el Dr. Rojas obtuvo en
+                        2008 el premio de tecnología mejor dotado en Alemania, el premio de transferencia de
+                        tecnología “WissensWertes” de la ciudad de Berlín; d) Microrobots del tamaño de insectos,
+                        entre otras cosas, para imitar la danza de las abejas; e) Sillas de ruedas autónomas que trasladan
+                        personas en apartamentos obedeciendo comandos verbales o controlados con ondas
+                        cerebrales; f) Robots humanoides para distintas actividades; g) El salón de clases del futuro,
+                        desarrollado por el Dr. Rojas a la par del proyecto “libro del futuro” para mejorar la enseñanza
+                        de las matemáticas.
+                      </p>
                     </div>
                   </div>
                 </div>
-                <!- Tarjeta ->
+                <!-- Tarjeta -->
+                <div class="schedule-listing">
+                  <span class="schedule-slot-time">10:00 - 11:30</span>
+                  <div class="schedule-slot-info">
+                    <div class="schedule-slot-info-content">
+                      <h3 class="schedule-slot-speaker-name">Evaluación de Proyectos</h3>
+                      <h3 class="schedule-slot-speaker-place">Aplicaciones básicas</h3>
+                      <p class="schedule-slot-lugar">@ Aula Virtual</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Tarjeta -->
                 <div class="schedule-listing bg">
-                  <span class="schedule-slot-time">14:35 - 16:00PM</span>
+                  <span class="schedule-slot-time">11:30 - 13:00</span>
                   <div class="schedule-slot-info">
-                    <a href="#">
-                                        <img class="schedule-slot-speakers" src="images/speakers/speaker8.jpg" alt="">
-                                        </a>
                     <div class="schedule-slot-info-content">
-                      <h3 class="schedule-slot-speaker-name">Davi Azevedo</h3>
-                      <h4 class="schedule-slot-title">Not Perfect, Always Better: A Story of Inclusion</h4>
-                      <p class="schedule-slot-desc">Plaid fashion axe semiotics skateboard, try-hard food truck aesthetic biodiesel exercitation. Accusamus VHS Wes Anderson Banksy food truck vero.</p>
+                      <h3 class="schedule-slot-speaker-name">Evaluación de Proyectos</h3>
+                      <h3 class="schedule-slot-speaker-place">Hardware & Robótica</h3>
+                      <p class="schedule-slot-lugar">@ Aula Virtual</p>
                     </div>
                   </div>
                 </div>
-              </div>
+                <!-- Tarjeta -->
+                <div class="schedule-listing">
+                  <span class="schedule-slot-time">10:00 - 10:50</span>
+                  <div class="schedule-slot-info">
+                    <a href="" target="_blank">
+                        <img class="schedule-slot-speakers" src="assets/speakers/ErikaSaucedo.jpg" alt="">
+                    </a>
+                    <div class="schedule-slot-info-content">
+                      <h3 class="schedule-slot-speaker-name">Mtra. Erika Saucedo</h3>
+                      <h3 class="schedule-slot-speaker-place">Directora General SEC360°</h3>
+                      <p class="schedule-slot-lugar">@ Sala 1 del Centro de Convenciones</p>
+                      <h4 class="schedule-slot-title">Defensa de tu "site": Controles  Estratégicos de ciberseguridad más importantes.</h4>
+                      <p class="schedule-slot-desc">
+                        * Es Licenciada en Ciencias de la Computación, orgullosamente egresada por la Benemérita Universidad Autónoma de Puebla.<br/>
+                        * Erika Saucedo tiene más de 17 años de experiencia en seguridad de la información participando en proyectos de pruebas de penetración, diseño e implementación de arquitecturas de seguridad para muchas de las empresas más importantes del país.<br/>
+                        * Tiene una Maestría en Ciencias de la Computación con Especialidad en Redes de Computadoras por el ITESM CEM, es CISSP, CCNA e ISO/IEC 27001 Lead Auditor. También cuenta con un Diplomado en Seguridad Informática en el ITESM.<br/><br/>
+
+                        Mujer plena y éxitosa. Desde ya 8 años tiene su propia firma de
+                        servicios de seguridad en la que se enfocan en servicios de seguridad
+                        orientados a asesorar a las compañías de acuerdo con sus necesidades
+                        reales. Entre las actividades que realiza se encuentran las
+                        siguientes: Penetración de sistemas (Hackeo ético), a fin de evaluar
+                        las configuraciones de seguridad de los equipos evaluados sobre
+                        plataformas Linux, Windows, HP-UX, Solaris, AIX, AS/400, bases de
+                        datos, sistemas SAP, Firewalls, y ruteadores en muchas de las
+                        Instituciones más importantes del sector financiero, gobierno,
+                        telecomunicaciones, educación, y entretenimiento en nuestro país.
+                        Auditoria de Seguridad de plataformas UNIX (HP-UX, Solaris, Linux,
+                        AIX), Windows, MS-SQL, PBX, Active Directory, firewalls, y ruteadores.
+                        Realización de proyectos de análisis de riesgos en el ámbito técnico.
+                        Auditoría de seguridad basado en la norma ISO/IEC 27001. Análisis de
+                        riesgos derivados del uso de tecnología de información. Diseño e
+                        Implementación de Arquitecturas de Seguridad. Diseño e Implementación
+                        de Estándares Mínimos de Configuración para Sistemas Operativos y
+                        Bases de Datos.<br/><br/>
+
+                        Visionaria y creadora de una solución Méxicana de configuración segura
+                        “WHITE SECURITY TECHICAL COMPLIANCE SUITE”
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Tarjeta -->
+                <div class="schedule-listing bg">
+                  <span class="schedule-slot-time">11:00 - 11:50</span>
+                  <div class="schedule-slot-info">
+                    <a href="https://twitter.com/mote_enrique" target="_blank">
+                                        <img class="schedule-slot-speakers" src="assets/speakers/EnriqueMote.jpg" alt="">
+                    </a>
+                    <div class="schedule-slot-info-content">
+                      <h3 class="schedule-slot-speaker-name">Enrique Mote</h3>
+                      <h3 class="schedule-slot-speaker-place">Nearsoft</h3>
+                      <p class="schedule-slot-lugar">@ Sala 1 del Centro de Convenciones</p>
+                      <h4 class="schedule-slot-title">SOLID. 5 principios que nos ayudarán a crear clases flexibles, robustas y reutilizables.</h4>
+                      <p class="schedule-slot-desc">
+                        El paradigma Orientado a Objetos es ampliamente usado en la actualidad para el diseño se software, sin embargo, ¿existe algún camino para asegurar un diseño flexible, robusto y reutilizable? La respuesta es sí, los 5 principios básicos de SOLID. Enrique Mote es egresado de la Facultad de Ciencias de la Computación de la BUAP. Actualmente trabaja como Java developer en Nearsoft. Aprendo siempre de los que me rodean y me gusta compartir el conocimiento que tengo con los demás. Me gusta mucho el deporte, películas, comics y manga también.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Tarjeta -->
+                <div class="schedule-listing">
+                  <span class="schedule-slot-time">10:30 - 13:00</span>
+                  <div class="schedule-slot-info">
+                    <div class="schedule-slot-info-content">
+                      <h3 class="schedule-slot-speaker-name">Evaluación de Proyectos</h3>
+                      <h3 class="schedule-slot-speaker-place">Aplicaciones Avanzadas</h3>
+                      <p class="schedule-slot-lugar">@ Sala 2 del Centro de Convenciones</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Tarjeta -->
+                <!-- <div class="schedule-listing bg">
+                  <span class="schedule-slot-time">11:00 - 13:00</span>
+                  <div class="schedule-slot-info">
+                    <div class="schedule-slot-info-content">
+                      <h3 class="schedule-slot-speaker-name">Evaluación de Proyectos</h3>
+                      <h3 class="schedule-slot-speaker-place">Aplicaciones de Gráficos Generados por Computadora</h3>
+                      <p class="schedule-slot-lugar">@ Sala 2 Centro de Convenciones</p>
+                    </div>
+                  </div>
+                </div> -->
+                <!-- Tarjeta -->
+                <div class="schedule-listing">
+                  <span class="schedule-slot-time">13:00 - 13:50</span>
+                  <div class="schedule-slot-info">
+                    <a href="" target="_blank">
+                      <img class="schedule-slot-speakers" src="assets/speakers/DrJorgeLedesma.jpg" alt="">
+                    </a>
+                    <div class="schedule-slot-info-content">
+                      <h3 class="schedule-slot-speaker-name">Dr. Jorge Ledesma</h3>
+                      <h3 class="schedule-slot-speaker-place">CEO Oblack Data Center</h3>
+                      <p class="schedule-slot-lugar">@ Sala 1 del Centro de Convenciones</p>
+                      <h4 class="schedule-slot-title conferencia-magistral">CONFERENCIA MAGISTRAL</h4>
+                      <h4 class="schedule-slot-title">INCEPTION</h4>
+                      <p class="schedule-slot-desc">
+                        “Inception” habla acerca de los conceptos fundamentales que se deben adquirir para emprender una idea, un proyecto, un sueño, una meta u objetivos, en un mundo globalizado y en constante cambio.<br/>
+                        En esta conferencia, el Dr. Ledesma, plasmará cómo será el mundo en los próximos años y, lo más importante, cómo prepararnos para afrontarlo.<br/><br/>
+
+
+                        Jorge Ledesma, nació el 11 de agosto de 1978 en la ciudad de
+                        México, es egresado de la universidad de Oxford como Doctor
+                        en Tecnologías de la Información, estudió además las
+                        maestrías en Comercio Electrónico, Inteligencia Artificial,
+                        Telecomunicaciones, Administración Informática y Networking;
+                        es un desarrollador de software, especializado en protocolos
+                        de comunicación, software multiplataforma y seguridad
+                        informática.<br/>
+                        Anteriormente laboró para la consultora de TI más grande del
+                        mundo en Europa Central y Oriental, donde a lo largo de los
+                        años adquirió experiencia desarrollando exitosamente grandes
+                        proyectos en diversas partes del mundo.<br/><br/>
+
+                        Posteriormente laboró para uno de los hombres más acaudalados del planeta, el mexicano
+                        Carlos Slim, donde logró formar un equipo para desarrollo altamente competitivo, con una
+                        reputación establecida y servir como pionero en la industrialización del software en México.
+                        Jorge Ledesma es mejor conocido por escribir las rutinas para Eclipse mientras estudiaba en
+                        la Université Libre de Bruxelles, en Bélgica. Las rutinas fueron reutilizadas posteriormente en
+                        los productos que actualmente comercializan las empresas de Oblak Datacenter.<br/>
+                        Entre sus logros más destacados se encuentran la creación de Paranoid, un algoritmo
+                        mutante basado en inteligencia artificial, CHH un protocolo de comunicación que hace posible
+                        la primera red descentralizada en la nube y Alice un robot de asistencia virtual, que puede
+                        sostener por chat 2000 conversaciones simultáneas, interpreta incluso errores ortográficos,
+                        abreviaturas, el estrés y palabras altisonantes en más de 10 idiomas.<br/>
+                        Es el creador de más de 1200 productos basados en la nube y más de 30 productos de
+                        software multiplataforma; ha creado diversos frameworks, entre ellos Sprava que construye
+                        web services basados en metodologías rest en unos cuantos minutos. Ha escrito 5 libros de
+                        lenguajes de programación: The Magic PHP, The Magic Java Script, The Magic ActionScript
+                        3.0, The Magic Flex Builder 4.0 y The Magic Node.js. Actualmente tiene dos libros por
+                        publicar: Discovery Magento 2.0 e Inception. Además, es el creador del primer Gateway de
+                        pagos online en México.<br/>
+                        Aprendió a programar en lenguajes de computadoras a la edad de 12 años con un libro de
+                        matemáticas aplicadas, conoce más de 25 lenguajes de programación y ha desarrollado
+                        proyectos en los 5 continentes.<br/>
+                        Es el Chairman &amp; Founder de las empresas y marcas norteamericanas de Oblak Datacenter,
+                        misma que fue creada hace casi 18 años, cuando él aún era un estudiante.<br/>
+
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Tarjeta -->
+                <div class="schedule-listing bg important">
+                  <span class="schedule-slot-time">14:00 - 15:00</span>
+                  <div class="schedule-slot-info">
+                    <div class="schedule-slot-info">
+                      <div class="schedule-slot-info-content">
+                        <h3 class="schedule-slot-title">PREMIACIÓN Y CLAUSURA</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
-            <!- Botón de descargar programa del evento ->
+
+            <!-- Botón de descargar programa del evento -->
             <div class="gap-60"></div>
-            <!- TODO: Botón descargar itinerario ->
-            <!- <div class="text-center"><a class="btn btn-primary" href="#"><i class="fa fa-file-pdf-o"></i> Descargar Itinerario</a></div> ->
+            <!-- TODO: Botón descargar itinerario -->
+            <!-- <div class="text-center"><a class="btn btn-primary" href=""><i class="fa fa-file-pdf-o"></i> Descargar Itinerario</a></div> -->
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- PATROCINADORES -->
+    <div class="container section" id="patrocinadores">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-heading">Patrocinadores<span class="blink">_</span></h3>
+            <div id="Oro" class="row PatrocinadoresDiv">
+              <!-- BUAP -->
+              <div class="col-md-6 patrocinadores">
+                <a href="https://www.buap.mx/" target="_blank"><img src="assets/patrocinadores/oro/BUAP.png" alt="BUAP"></a>
+              </div>
+              <!-- OBLACK -->
+              <div class="col-md-6 patrocinadores">
+                <a href="https://www.oblakdc.com/" target="_blank"><img src="assets/patrocinadores/oro/oblack.png" alt="OBlack"></a>
+              </div>
+            </div>
+            <div id="Plata" class="row PatrocinadoresDiv">
+              <div class="row">
+                <!-- ABAT -->
+                <div class="col-md-3 patrocinadores">
+                  <a href="https://www.abat.de/es/mexabat" target="_blank"><img src="assets/patrocinadores/plata/abat.png" alt="abat"></a>
+                </div>
+                <!-- BASE 22 -->
+                <div class="col-md-3 patrocinadores">
+                  <a href="http://www.base22.com/wps/portal/base22/home" target="_blank"><img src="assets/patrocinadores/plata/base22.png" alt="base 22"></a>
+                </div>
+                <!-- TI AMERICA -->
+                <div class="col-md-3 patrocinadores">
+                  <a href="https://www.ti-america.com/" target="_blank">
+                    <img src="assets/patrocinadores/plata/TI_America.png" alt="TI AMERICA">
+                  </a>
+                </div>
+                <!-- WHITE SECURITY -->
+                <div class="col-md-3 patrocinadores">
+                  <a href="http://www.sec360.com.mx/index.html" target="_blank"><img src="assets/patrocinadores/plata/whitesecurity.png" alt="white security"></a>
+                </div>
+              </div>
+            </div>
+            <div id="Bronce" class="row PatrocinadoresDiv">
+              <!-- VMAS -->
+              <div class="col-md-3 patrocinadores">
+                <a href="https://www.vmasideas.com/" target="_blank"><img src="assets/patrocinadores/bronce/vmas.png" alt="vmas"></a>
+              </div>
+              <!-- VD -->
+              <div class="col-md-3 patrocinadores">
+                <a href="http://www.docencia.buap.mx/" target="_blank"><img src="assets/patrocinadores/plata/vd.png" alt="Vicerrectoría de docencia"></a>
+              </div>
+              <!-- DGIE -->
+              <div class="col-md-3 patrocinadores">
+                <a href="http://www.dgie.buap.mx/" target="_blank"><img src="assets/patrocinadores/plata/dgie.png" alt="DGIE"></a>
+              </div>
+              <!-- VIEP -->
+              <div class="col-md-3 patrocinadores">
+                <a href="http://www.viep.buap.mx/posgrado/" target="_blank"><img src="assets/patrocinadores/plata/viep.png" alt="Viep"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLABORADORES -->
+    <div class="container section" id="colaboradores">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-heading">Colaboradores<span class="blink">_</span></h3>
+            <div class="row">
+              <!-- CICE -->
+              <div class="col-md-2 patrocinadores">
+                <a href="https://www.facebook.com/CiceBuap/" target="_blank"><img src="assets/patrocinadores/bronce/cice.gif" alt=" cice"></a>
+              </div>
+              <!-- GRUPO INBUCE -->
+              <div class="col-md-2 patrocinadores">
+                <a href="" target="_blank"><img src="assets/patrocinadores/plata/inbuce.png" alt="Grupo inbuce"></a>
+              </div>
+              <!-- DAC -->
+              <div class="col-md-2 patrocinadores">
+                <a href="http://cmas.siu.buap.mx/portal_pprd/wb/dac/inicio" target="_blank"><img src="assets/patrocinadores/colaboradores/DAC.png" alt="DAC"></a>
+              </div>
+              <!-- VDEC -->
+              <div class="col-md-2 patrocinadores">
+                <a href="https://www.facebook.com/vedcbuap/" target="_blank"><img src="assets/patrocinadores/colaboradores/vedc.png" alt="VEDC"></a>
+              </div>
+              <!-- FULL STACK -->
+              <div class="col-md-2 patrocinadores">
+                <a href="http://www.fstack.com.mx/" target="_blank"><img src="assets/patrocinadores/colaboradores/fullstack.png" alt="FullStack"></a>
+              </div>
+              <!-- POLIMENT -->
+              <div class="col-md-2 patrocinadores">
+                <a href="http://poliment.com.mx/" target="_blank"><img src="assets/patrocinadores/colaboradores/poliment.png" alt="Poliment"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ACREDITACIONES -->
+    <div class="container section" id="acreditaciones">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-heading">Acreditaciones<span class="blink">_</span></h3>
+              <!-- SOLACYT -->
+              <div class="col-md-12 patrocinadores">
+                <a href="http://solacyt.org/" target="_blank"><img style="max-width: 350px" src="assets/patrocinadores/solacyt.png" alt="SOLACYT"></a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDIOS -->
+    <div class="container section" id="medios">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-heading">Medios<span class="blink">_</span></h3>
+            <div class="row">
+              <!-- RADIO BUAP -->
+              <div class="col-md-6 patrocinadores">
+                <a href="http://radiobuap.com/" target="_blank"><img src="assets/patrocinadores/medios/radio_buap.png" alt="Radio BUAP"></a>
+              </div>
+              <!-- EXPANDE TV -->
+              <div class="col-md-6 patrocinadores">
+                <a href="http://www.expande.tv/" target="_blank"><img src="assets/patrocinadores/medios/expande_tv.jpg" alt="EXPANDE TV"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-  </section>
--->
-  </div>
+
+
 
   <!-- Pié de página movible -->
   <div class="footer">
@@ -328,6 +1130,21 @@
       <li><a href="https://www.instagram.com/fepro_2018/" target="_blank"><i class="fab fa-instagram"></i></a></li>
     </ul>
   </div>
+
+
+   <!-- Modal -->
+   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" >
+          <div class="modal-body">
+            <iframe id="iframeYoutube" style="width: 100%" height="315"  src="https://www.youtube.com/embed/e80BbX05D7Y" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
   <!-- SCRIPTS de Javascript -->
@@ -343,6 +1160,10 @@
   <script src="scripts/tilt.jquery.js" type="text/javascript"></script>
   <!-- animación del Footer  -->
   <script src="scripts/footer.js"></script>
+  <!-- Tarjetas de las categorías -->
+  <script type="text/javascript" src="scripts/categorias.js"></script>
+  <script type="text/javascript" src="scripts/ganadores.js"></script>
+  <script type="text/javascript" src="scripts/proyectos.js"></script>
 </body>
 
 </html>
