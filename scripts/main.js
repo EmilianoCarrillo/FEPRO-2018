@@ -1,16 +1,16 @@
 // COUNTDOWN TIMER
-var deadline = new Date("Sep 13, 2018 10:00:00").getTime();
-var x = setInterval(function() {
-var now = new Date().getTime();
-var t = deadline - now;
-var days = Math.floor(t / (1000 * 60 * 60 * 24));
-var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
-var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-var seconds = Math.floor((t % (1000 * 60)) / 1000);
-document.getElementById("dias").innerHTML = days + " días";
-document.getElementById("horas").innerHTML = hours + " horas";
-document.getElementById("minutos").innerHTML = minutes + " minutos";
-}, 1000);
+// var deadline = new Date("Sep 13, 2018 10:00:00").getTime();
+// var x = setInterval(function() {
+// var now = new Date().getTime();
+// var t = deadline - now;
+// var days = Math.floor(t / (1000 * 60 * 60 * 24));
+// var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+// var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+// var seconds = Math.floor((t % (1000 * 60)) / 1000);
+// document.getElementById("dias").innerHTML = days + " días";
+// document.getElementById("horas").innerHTML = hours + " horas";
+// document.getElementById("minutos").innerHTML = minutes + " minutos";
+// }, 1000);
 
 
 
